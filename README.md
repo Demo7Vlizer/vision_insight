@@ -116,8 +116,8 @@ flutter run
   <table>
     <tr>
       <td><img src="assets/sample/Screenshot 2025-02-13 094836.png" width="200" alt="Home Screen"/></td>
-      <td><img src="assets/sample/Screenshot 2025-02-13 095547.png" width="200" alt="Chat Interface"/></td>
-      <td><img src="assets/sample/Screenshot 2025-02-13 095619.png" width="200" alt="Image Analysis"/></td>
+      <td><img src="assets/sample/image.png" width="200" alt="Chat Interface"/></td>
+      <td><img src="assets/sample/Screenshot 2025-02-13 135453.png" width="200" alt="Image Analysis"/></td>
     </tr>
   </table>
 </div>
