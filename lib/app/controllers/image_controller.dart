@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:project_t/openai_service.dart';
+import '../data/services/openai_service.dart';
 import 'dart:io';
 import './chat_controller.dart';
 

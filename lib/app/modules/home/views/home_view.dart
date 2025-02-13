@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:project_t/app/widgets/chat_input.dart';
-import 'package:project_t/widgets/custom_loader.dart';
+import '../../../widgets/custom_loader.dart';
 import 'package:project_t/app/widgets/chat_section.dart';
 import '../../../controllers/chat_controller.dart';
 import '../../../controllers/image_controller.dart';
-import 'package:project_t/models/chat_message.dart';
+// import 'package:project_t/models/chat_message.dart';
 
 class HomeView extends GetView<ChatController> {
   const HomeView({super.key});
@@ -238,8 +238,9 @@ class HomeView extends GetView<ChatController> {
                   }),
                   Obx(() {
                     if (imageController.image.value != null) {
+                      debugPrint('Number of messages: ${controller.messages.length}'); // Debug print
                       return ChatSection(
-                        messages: controller.messages.value.cast<ChatMessage>(),
+                        messages: controller.messages,
                       );
                     }
                     return const SizedBox.shrink();
