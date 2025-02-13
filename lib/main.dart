@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'app/modules/home/bindings/home_binding.dart';
 import 'app/modules/home/views/home_view.dart';
+import 'app/modules/splash/views/splash_view.dart';
 
 Future<void> main() async {
   await dotenv.load(fileName: ".env");  // Load environment variables
@@ -44,8 +45,16 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
+      home: FutureBuilder(
+        future: Future.delayed(const Duration(seconds: 2)), // Splash screen duration
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.done) {
+            return const HomeView();
+          }
+          return const SplashView();
+        },
+      ),
       initialBinding: HomeBinding(),
-      home: const HomeView(),
     );
   }
 }

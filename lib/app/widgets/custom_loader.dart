@@ -30,3 +30,24 @@ class CustomLoader2 extends StatelessWidget {
   }
 }
 
+
+
+//-----------------------------
+
+
+class CustomLoader3 extends StatelessWidget {
+  const CustomLoader3({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Container(
+        child: Image.asset('assets/image/blackLoading-unscreen.gif', 
+        width: 200,
+        height: 200,
+        ),
+      ),
+    );
+  }
+}
+

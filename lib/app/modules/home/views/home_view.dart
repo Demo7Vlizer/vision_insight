@@ -34,14 +34,24 @@ class HomeView extends GetView<ChatController> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text(
-          "AI VISION APP",
-          style: TextStyle(
-            fontWeight: FontWeight.w600,
-            color: Colors.black87,
-            fontSize: 20,
-            letterSpacing: 0.5,
-          ),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/image/Logo.png',
+              height: 20,
+            ),
+            const SizedBox(width: 8),
+            const Text(
+              "AI VISION APP",
+              style: TextStyle(
+                fontWeight: FontWeight.w600,
+                color: Colors.black87,
+                fontSize: 20,
+                letterSpacing: 0.5,
+              ),
+            ),
+          ],
         ),
         centerTitle: true,
         backgroundColor: Colors.white,
