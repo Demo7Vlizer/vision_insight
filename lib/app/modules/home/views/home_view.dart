@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:project_t/app/widgets/chat_input.dart';
+import 'package:vision/app/widgets/chat_input.dart';
 import '../../../widgets/custom_loader.dart';
-import 'package:project_t/app/widgets/chat_section.dart';
+import 'package:vision/app/widgets/chat_section.dart';
 import '../../../controllers/chat_controller.dart';
 import '../../../controllers/image_controller.dart';
 // import 'package:project_t/models/chat_message.dart';

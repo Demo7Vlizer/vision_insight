@@ -2,7 +2,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
     <application
-        android:label="project_t"
+        android:label="VISION"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity

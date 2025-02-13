@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:project_t/app/controllers/chat_controller.dart';
-import 'package:project_t/app/controllers/image_controller.dart';
+import 'package:vision/app/controllers/chat_controller.dart';
+import 'package:vision/app/controllers/image_controller.dart';
 
 class HomeController extends GetxController {
   late final ChatController chatController;

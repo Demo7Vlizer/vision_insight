@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:project_t/app/widgets/custom_loader.dart';
+import 'package:vision/app/widgets/custom_loader.dart';
 import 'dart:ui';
 
 class SplashView extends StatefulWidget {
