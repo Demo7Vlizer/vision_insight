@@ -1,81 +1,104 @@
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&duration=3000&pause=1000&color=00FFB3&center=true&vCenter=true&width=435&lines=Welcome+to+AI+Vision+App+🔍;Powered+by+OpenAI's+Vision+API;Turn+Images+into+Descriptions" alt="Typing SVG" />
-  <br/>
-  <img src="https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake.svg" alt="Loading Animation"/>
-  <img src="assets/sample/gif-unscreen.gif" width="100" alt="Loading Animation"/>
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&duration=3000&pause=1000&color=00FFB3&center=true&vCenter=true&width=435&lines=Welcome+to+AI+Vision+Chat+🤖;Powered+by+OpenAI's+Vision+API;Ask+Questions+About+Any+Image;Get+Intelligent+Responses" alt="Typing SVG" />
+  
+  <p align="center">
+    <img src="https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake.svg" alt="snake animation" />
+  </p>
 </div>
 
-# AI Vision App 🤖
+# AI Vision Chat App 🚀
 
-A Flutter application that uses OpenAI's Vision API to analyze images and provide detailed descriptions. Simply take a photo or choose one from your gallery, and let AI tell you what it sees!
+A powerful Flutter application that combines OpenAI's Vision API with an intuitive chat interface. Upload images and have natural conversations about them with AI!
 
-<div align="center">
-  <img src="assets/sample/VisionAI_Testing.gif" width="300" alt="Demo GIF"/>
-</div>
-
-## ✨ Features
+## ✨ Key Features
 
 <details>
-<summary>📸 Image Handling</summary>
+<summary>📱 Core Features</summary>
 
-- Camera integration for instant photo capture
-- Gallery access for existing images
-- Image quality optimization (84% quality)
-- Maximum resolution: 1920x1080
-- File size limit: 10MB
+- Image capture from camera
+- Gallery image selection
+- Real-time AI image analysis
+- Interactive chat interface
+- Auto-scrolling messages
+- Elegant animations
+- Error handling & feedback
 </details>
 
 <details>
-<summary>🤖 AI Integration</summary>
+<summary>🎨 UI Components</summary>
 
-- Powered by OpenAI's Vision API
-- Real-time image analysis
-- Detailed scene descriptions
-- Error handling and user feedback
-</details>
-
-<details>
-<summary>🎨 UI Features</summary>
-
-- Material Design 3.0
-- Clean and intuitive interface
+### Chat Interface
+- Custom chat bubbles
+- User/AI message differentiation
 - Loading indicators
-- Error notifications via SnackBar
-- Responsive layout
-- Custom theme with deep purple accent
+- Smooth scrolling
+- Input field with send button
+
+### Image Handling
+- Image preview container
+- Camera/Gallery selection buttons
+- Image quality optimization
+- Size limit handling
 </details>
 
-## 📱 Screenshots
+<details>
+<summary>🏗️ Project Structure</summary>
 
-<div align="center">
-  <table>
-    <tr>
-      <td><img src="assets/sample/Screenshot 2025-02-13 094836.png" width="250" alt="Screenshot 1"/></td>
-      <td><img src="assets/sample/Screenshot 2025-02-13 095547.png" width="250" alt="Screenshot 2"/></td>
-      <td><img src="assets/sample/Screenshot 2025-02-13 095619.png" width="250" alt="Screenshot 3"/></td>
-    </tr>
-  </table>
-</div>
+```
+lib/
+├── app/
+│   ├── controllers/
+│   │   ├── chat_controller.dart    # Chat logic & message handling
+│   │   └── image_controller.dart   # Image processing & analysis
+│   ├── models/
+│   │   └── chat_message.dart      # Message data structure
+│   ├── modules/
+│   │   └── home/
+│   │       └── views/
+│   │           └── home_view.dart  # Main UI implementation
+│   └── widgets/
+│       ├── chat_bubble.dart       # Message bubble design
+│       ├── chat_input.dart        # Input field component
+│       └── chat_section.dart      # Chat list implementation
+└── main.dart                      # App initialization
+```
+</details>
+
+<details>
+<summary>🔧 Technical Details</summary>
+
+### Image Processing
+- Max resolution: 1920x1080
+- Quality compression: 84%
+- Size limit: 10MB
+- Supported formats: JPG, PNG
+
+### State Management
+- GetX for reactive state
+- Efficient message handling
+- Smooth UI updates
+</details>
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Flutter SDK
-- OpenAI API Key
-- Android Studio / VS Code
-- Git
+- Flutter SDK (2.0 or higher)
+- OpenAI API key
+- Basic Flutter knowledge
 
-### Installation
+### Installation Steps
 
 1. Clone the repository
+```bash
+git clone https://github.com/yourusername/ai-vision-chat.git
+```
 
 2. Install dependencies
-
 ```bash
 flutter pub get
 ```
 
-3. Create a `.env` file in the root directory and add your OpenAI API key
+3. Create `.env` file in root directory
 ```env
 OPENAI_API_KEY=your_api_key_here
 ```
@@ -85,53 +108,41 @@ OPENAI_API_KEY=your_api_key_here
 flutter run
 ```
 
-## 📁 Project Structure
+## 📱 Screenshots & Demo
 
-<details>
-<summary>📱 lib/home_page.dart</summary>
-
-- Main UI implementation
-- Image picking logic
-- AI analysis integration
-- State management
-- Error handling
-</details>
-
-<details>
-<summary>🔌 lib/openai_service.dart</summary>
-
-- OpenAI API integration
-- Image processing
-- API response handling
-- Error management
-</details>
-
-<details>
-<summary>🎨 lib/main.dart</summary>
-
-- App initialization
-- Theme configuration
-- Environment setup
-- Root widget setup
-</details>
+<div align="center">
+  <img src="assets/sample/VisionAI_Testing_2.gif" width="300" alt="App Demo"/>
+  
+  <table>
+    <tr>
+      <td><img src="assets/sample/Screenshot 2025-02-13 094836.png" width="200" alt="Home Screen"/></td>
+      <td><img src="assets/sample/Screenshot 2025-02-13 095547.png" width="200" alt="Chat Interface"/></td>
+      <td><img src="assets/sample/Screenshot 2025-02-13 095619.png" width="200" alt="Image Analysis"/></td>
+    </tr>
+  </table>
+</div>
 
 ## 🛠️ Built With
 
 - [Flutter](https://flutter.dev/) - UI Framework
-- [OpenAI API](https://openai.com/api/) - Vision AI
+- [GetX](https://pub.dev/packages/get) - State Management
+- [OpenAI API](https://openai.com/api/) - Vision & Chat AI
 - [image_picker](https://pub.dev/packages/image_picker) - Image Selection
-- [http](https://pub.dev/packages/http) - API Calls
-- [flutter_dotenv](https://pub.dev/packages/flutter_dotenv) - Environment Management
-
+- [flutter_dotenv](https://pub.dev/packages/flutter_dotenv) - Environment Config
 
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
 ---
 
 <div align="center">
-  <p>If you like this project, please give it a ⭐️</p>
-  <p>Made with ❤️ by Your Name</p>
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&duration=3000&pause=1000&color=00FFB3&center=true&vCenter=true&width=435&lines=Thank+you+for+visiting!;Star+⭐+if+you+like+it;Made+with+💙+by+Rahul" alt="Typing SVG" />
 </div>
 
