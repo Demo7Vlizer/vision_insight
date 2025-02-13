@@ -1,5 +1,8 @@
 <div align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&duration=3000&pause=1000&color=00FFB3&center=true&vCenter=true&width=435&lines=Welcome+to+AI+Vision+App+🔍;Powered+by+OpenAI's+Vision+API;Turn+Images+into+Descriptions" alt="Typing SVG" />
+  <br/>
+  <img src="https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake.svg" alt="Loading Animation"/>
+  <img src="assets/sample/gif-unscreen.gif" width="100" alt="Loading Animation"/>
 </div>
 
 # AI Vision App 🤖
@@ -131,3 +134,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
   <p>If you like this project, please give it a ⭐️</p>
   <p>Made with ❤️ by Your Name</p>
 </div>
+

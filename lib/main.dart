@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:project_t/home_page.dart';
+import 'app/modules/home/bindings/home_binding.dart';
+import 'app/modules/home/views/home_view.dart';
 
 Future<void> main() async {
   await dotenv.load(fileName: ".env");  // Load environment variables
@@ -12,7 +14,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'AI Vision App',
       theme: ThemeData(
@@ -42,7 +44,8 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const HomePage(),
+      initialBinding: HomeBinding(),
+      home: const HomeView(),
     );
   }
 }

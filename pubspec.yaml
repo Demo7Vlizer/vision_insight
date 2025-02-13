@@ -33,6 +33,9 @@ dependencies:
   http: ^1.1.0
   image_picker: ^1.1.2
   flutter_dotenv: ^5.1.0
+  google_fonts: ^6.2.1
+  emoji_picker_flutter: ^2.0.0
+  get: ^4.6.6
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -92,4 +95,6 @@ flutter:
   # see https://flutter.dev/to/font-from-package
 
   assets:
+    - assets/sample/loadingdots2-unscreen.gif
+    - assets/sample/blackLoading-unscreen.gif
     - .env
