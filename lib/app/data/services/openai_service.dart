@@ -6,23 +6,24 @@ import 'package:get/get.dart';
 import 'package:flutter/foundation.dart';
 
 class OpenAIService {
-  final String _baseUrl = 'https://api.openai.com/v1/chat/completions';
-  late final String _apiKey;
+  final String _baseUrl =
+      'https://models.inference.ai.azure.com/chat/completions';
+  late final String _token;
 
   OpenAIService() {
-    _apiKey = dotenv.env['OPENAI_API_KEY'] ?? '';
-    if (_apiKey.isEmpty) {
+    _token = dotenv.env['GITHUB_TOKEN'] ?? '';
+    if (_token.isEmpty) {
       Get.snackbar(
         'Configuration Error',
-        'OpenAI API key not found. Please check your .env file.',
+        'GitHub token not found. Please check your .env file.',
         duration: const Duration(seconds: 5),
       );
     }
   }
 
   Future<String> analyzeImage(File imageFile) async {
-    if (_apiKey.isEmpty) {
-      throw Exception('OpenAI API key not configured');
+    if (_token.isEmpty) {
+      throw Exception('GitHub token not configured');
     }
 
     try {
@@ -33,10 +34,10 @@ class OpenAIService {
         Uri.parse(_baseUrl),
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer $_apiKey',
+          'Authorization': 'Bearer $_token',
         },
         body: jsonEncode({
-          'model': 'gpt-4o-mini',
+          'model': 'gpt-4o',
           'messages': [
             {
               'role': 'user',
@@ -48,20 +49,24 @@ class OpenAIService {
                 {
                   'type': 'image_url',
                   'image_url': {
-                    'url': 'data:image/jpeg;base64,$base64Image'
+                    'url': 'data:image/jpeg;base64,$base64Image',
+                    'details': 'low'
                   }
                 }
               ]
             }
           ],
-          'max_tokens': 300,
+          'temperature': 1.0,
+          'top_p': 1.0,
+          'max_tokens': 300
         }),
       );
 
       if (response.statusCode == 200) {
         final data = jsonDecode(response.body);
         debugPrint('API Response: ${response.body}');
-        return data['choices'][0]['message']['content'] ?? 'No description available';
+        return data['choices'][0]['message']['content'] ??
+            'No description available';
       } else {
         debugPrint('API Error: ${response.body}');
         final error = jsonDecode(response.body);
@@ -74,8 +79,8 @@ class OpenAIService {
   }
 
   Future<String> askQuestionAboutImage(File imageFile, String question) async {
-    if (_apiKey.isEmpty) {
-      throw Exception('OpenAI API key not configured');
+    if (_token.isEmpty) {
+      throw Exception('GitHub token not configured');
     }
 
     try {
@@ -86,35 +91,36 @@ class OpenAIService {
         Uri.parse(_baseUrl),
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer $_apiKey',
+          'Authorization': 'Bearer $_token',
         },
         body: jsonEncode({
-          'model': 'gpt-4o-mini',
+          'model': 'gpt-4o',
           'messages': [
             {
               'role': 'user',
               'content': [
-                {
-                  'type': 'text',
-                  'text': question
-                },
+                {'type': 'text', 'text': question},
                 {
                   'type': 'image_url',
                   'image_url': {
-                    'url': 'data:image/jpeg;base64,$base64Image'
+                    'url': 'data:image/jpeg;base64,$base64Image',
+                    'details': 'low'
                   }
                 }
               ]
             }
           ],
-          'max_tokens': 300,
+          'temperature': 1.0,
+          'top_p': 1.0,
+          'max_tokens': 300
         }),
       );
 
       if (response.statusCode == 200) {
         final data = jsonDecode(response.body);
         debugPrint('API Response: ${response.body}');
-        return data['choices'][0]['message']['content'] ?? 'No response available';
+        return data['choices'][0]['message']['content'] ??
+            'No response available';
       } else {
         debugPrint('API Error: ${response.body}');
         final error = jsonDecode(response.body);
@@ -125,4 +131,4 @@ class OpenAIService {
       throw Exception('Error getting response: $e');
     }
   }
-} 
+}

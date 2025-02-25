@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import '../controllers/home_controller.dart';
+import '../controllers/search_image_controller.dart';
 import '../../../controllers/chat_controller.dart';
 import '../../../controllers/image_controller.dart';
 // import '../../../services/emoji_service.dart';

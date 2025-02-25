@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'app/modules/home/bindings/home_binding.dart';
-import 'app/modules/home/views/home_view.dart';
+import 'app/modules/search_image/bindings/search_image_binding.dart';
+import 'app/modules/search_image/views/search_image_view.dart';
 import 'app/modules/splash/views/splash_view.dart';
 
 Future<void> main() async {
-  await dotenv.load(fileName: ".env");  // Load environment variables
+  WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: ".env"); // Load environment variables
   runApp(const MyApp());
 }
 
@@ -46,7 +47,8 @@ class MyApp extends StatelessWidget {
         ),
       ),
       home: FutureBuilder(
-        future: Future.delayed(const Duration(seconds: 2)), // Splash screen duration
+        future: Future.delayed(
+            const Duration(seconds: 2)), // Splash screen duration
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             return const HomeView();

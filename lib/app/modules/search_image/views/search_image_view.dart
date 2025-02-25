@@ -14,8 +14,8 @@ class HomeView extends GetView<ChatController> {
   @override
   Widget build(BuildContext context) {
     final imageController = Get.find<ImageController>();
-    final ScrollController scrollController = ScrollController();        // scrolling.. 
- 
+    final ScrollController scrollController = ScrollController(); // scrolling..
+
     void scrollToBottom() {
       if (scrollController.hasClients) {
         scrollController.animateTo(
@@ -69,7 +69,8 @@ class HomeView extends GetView<ChatController> {
           const SizedBox(height: 8),
           Expanded(
             child: SingleChildScrollView(
-              controller: scrollController,                //------------------------------------
+              controller:
+                  scrollController, //------------------------------------
               child: Column(
                 children: [
                   Obx(() => Container(
@@ -248,7 +249,8 @@ class HomeView extends GetView<ChatController> {
                   }),
                   Obx(() {
                     if (imageController.image.value != null) {
-                      debugPrint('Number of messages: ${controller.messages.length}'); // Debug print
+                      debugPrint(
+                          'Number of messages: ${controller.messages.length}'); // Debug print
                       return ChatSection(
                         messages: controller.messages,
                       );
